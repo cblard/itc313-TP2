@@ -39,7 +39,6 @@ int main(){
 	magasin.afficherClient("Cash");
 
 	magasin.ajouterAuPanier(produit3, client);
-	cout<<client;
 
 	return 0;
 }

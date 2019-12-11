@@ -82,6 +82,8 @@ void Magasin::ajouterAuPanier(Produit produit, Client client){
 	for(int i=0; i<m_clients.size(); i++){
 		if(client==m_clients.at(i)){
 			m_clients.at(i).ajouterAuPanier(produit);
+			cout<<"\nClient et panifier modifiés : \n";
+			cout<<m_clients.at(i);
 		}
 	}
 }

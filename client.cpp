@@ -83,8 +83,7 @@ std::ostream &operator<<(std::ostream &out, Client &client)
 }
 
 bool operator==(Client client, Client client2){
-	if(client.getNom()==client2.getNom() && client.getPrenom()==client2.getPrenom() && 
-		client.getID()==client2.getID()){
+	if(client.getNom()==client2.getNom() && client.getPrenom()==client2.getPrenom()){
 		return true;
 	}
 	else return false; 
