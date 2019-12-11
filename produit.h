@@ -18,6 +18,7 @@ public:
 	Produit(string titre, string description, int stock, float prix);
 	int getStock();
 	float getPrix();
+	string getTitre();
 	string getDescription();
 	void modifierQuantite(int quantite);
 private:

@@ -21,17 +21,20 @@ float Produit::getPrix(){
 	return m_prix; 
 }
 
-void modifierQuantite(int quantite){
+string Produit::getTitre(){
+	return m_titre;
+}
+void Produit::modifierQuantite(int quantite){
 	m_stock=quantite;
 }
 string Produit::getDescription(){
 	string out;
 	out="_______________________________________________________________________________________\nProduit : "+
-	m_titre+"\n"+
-	m_description+"\n"+"Prix :"+
-	to_string(m_prix)+"€\nQuantité restante :"+
+	m_titre+"\nDescription : "+
+	m_description+"\n"+"Prix : "+
+	to_string(m_prix)+"€\nStock disponible : "+
 	to_string(m_stock)+
-	"\n_______________________________________________________________________________________";
+	"\n_______________________________________________________________________________________\n";
 	return out;
 }
 

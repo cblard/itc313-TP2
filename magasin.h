@@ -17,7 +17,10 @@ class Magasin{
 public:
 	Magasin();
 	Magasin(vector <Produit> produits, vector <Client> clients, vector <Commande> commandes);
-	//void ajouterProduit(Produit produit);
+	void ajouterProduit(Produit produit);
+	void afficherProduits();
+	void afficherProduit(string nom);
+	void majStock(string nom, int quantite);
 private:
 	vector <Produit> m_produits;
 	vector <Client> m_clients;

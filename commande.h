@@ -15,7 +15,7 @@ using namespace std;
 
 class Commande{
 public:
-	Commande(Client client, vector <Produit> produits, bool statut);
+	Commande(Client client, vector <Produit> produits, bool statut=false);
 	string getClient();
 	void validerLivraison();
 private:

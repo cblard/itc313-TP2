@@ -10,8 +10,18 @@
 #include "magasin.h"
 
 int main(){
-	Magasin magasin(); 
+	// Création d'un magasin et de deux produits
+	Magasin magasin; 
 	Produit produit("PS4", "Console Sony", 10, 299.99);
-	cout<<produit;
+	Produit produit2("Switch", "Console Nintendo", 20, 259.99);
+	produit.modifierQuantite(20);
+
+	// Tests d'ajout de produits, et d'affichage pour les produits du magasin
+	magasin.ajouterProduit(produit);
+	magasin.ajouterProduit(produit2);
+	magasin.majStock("Switch", 30);
+	magasin.afficherProduits();
+
+
 	return 0;
 }
