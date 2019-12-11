@@ -20,6 +20,7 @@ public:
 	float getPrix();
 	string getTitre();
 	string getDescription();
+	string getDescriptionComplete();
 	void modifierQuantite(int quantite);
 private:
 	string m_titre;
@@ -29,5 +30,6 @@ private:
 };
 
 std::ostream &operator<<(std::ostream &out, Produit &produit);
+bool operator==(Produit produit, Produit produit2);
 
 #endif

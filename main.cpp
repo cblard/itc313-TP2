@@ -20,7 +20,16 @@ int main(){
 	magasin.ajouterProduit(produit);
 	magasin.ajouterProduit(produit2);
 	magasin.majStock("Switch", 30);
-	magasin.afficherProduits();
+	//magasin.afficherProduits();
+
+	// Ajout de clients
+	Client client("Hallyday", "Johnny");
+	client.ajouterAuPanier(produit);
+	client.viderPanier();
+	client.ajouterAuPanier(produit);
+	client.ajouterAuPanier(produit2);
+	cout<<client;
+
 
 
 	return 0;

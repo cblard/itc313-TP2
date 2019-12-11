@@ -24,11 +24,17 @@ float Produit::getPrix(){
 string Produit::getTitre(){
 	return m_titre;
 }
+
+string Produit::getDescription(){
+	return m_description;
+}
+
 void Produit::modifierQuantite(int quantite){
 	m_stock=quantite;
 }
-string Produit::getDescription(){
-	string out;
+
+string Produit::getDescriptionComplete(){
+	string out="";
 	out="_______________________________________________________________________________________\nProduit : "+
 	m_titre+"\nDescription : "+
 	m_description+"\n"+"Prix : "+
@@ -42,4 +48,12 @@ std::ostream &operator<<(std::ostream &out, Produit &produit)
 {
 	out<<produit.getDescription();
 	return out;
+}
+
+bool operator==(Produit produit, Produit produit2){
+	if(produit.getTitre()==produit2.getTitre() && produit.getDescription()==produit2.getDescription() && 
+		produit.getStock()==produit2.getStock() && produit.getPrix()==produit2.getPrix()){
+		return true;
+	}
+	else return false; 
 }

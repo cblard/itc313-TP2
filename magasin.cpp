@@ -26,7 +26,7 @@ void Magasin::ajouterProduit(Produit produit){
 void Magasin::afficherProduits(){
 	cout<<"         LISTE DES PRODUITS                \n";
 	for(int i=0; i<m_produits.size(); i++){
-		cout<<m_produits.at(i).getDescription();
+		cout<<m_produits.at(i).getDescriptionComplete();
 	}
 }
 
@@ -34,7 +34,7 @@ void Magasin::afficherProduit(string nom){
 	cout<<"         PRODUIT DEMANDÉ             \n";
 	for(int i=0; i<m_produits.size(); i++){
 		if(nom==m_produits.at(i).getTitre()){
-			cout<<m_produits.at(i).getDescription();
+			cout<<m_produits.at(i).getDescriptionComplete();
 		}
 	}
 }

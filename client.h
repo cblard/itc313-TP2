@@ -18,16 +18,23 @@ using namespace std;
 class Client{
 public:
 	Client(string nom, string prenom);
-	void addProduit(Produit produit);
 	string getNom();
 	string getPrenom();
 	int getID();
 	vector <Produit> getPanier();
+	void ajouterAuPanier(Produit produit);
+	void retirerDuPanier(Produit produit); 
+	void viderPanier();
+	void modifierQuantiteProduit(Produit produit, int quantite);
+	string getDescription();
 private: 
 	string m_nom;
 	string m_prenom;
 	int m_id;
 	vector <Produit> m_panier;
 };
+
+std::ostream &operator<<(std::ostream &out, Client &client);
+
 
 #endif
