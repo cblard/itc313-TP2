@@ -17,6 +17,6 @@ Magasin::Magasin(vector <Produit> produits, vector <Client> clients, vector <Com
 	
 }
 
-void Magasin::ajouterProduit(Produit produit){
+/*void Magasin::ajouterProduit(Produit produit){
 	m_produits.push_back(produit);
-}
+}*/
