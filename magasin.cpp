@@ -46,3 +46,58 @@ void Magasin::majStock(string nom, int quantite){
 		}
 	}
 }
+
+void Magasin::ajouterClient(Client client){
+	m_clients.push_back(client);
+}
+
+void Magasin::afficherClients(){
+	cout<<"\n================= LISTE DES CLIENTS ================\n";
+	for(int i=0; i<m_clients.size(); i++){
+		cout<<"Client n° "<<i+1<<" : "<<m_clients.at(i).getInfos()<<"\n";
+	}
+}
+
+void Magasin::afficherClient(string nom){
+	cout<<"\nVous avez recherché : "<<nom<<"\n";
+	cout<<"\n================= CLIENTS TROUVÉS =================\n";
+	for(int i=0; i<m_clients.size(); i++){
+		if(m_clients.at(i).getNom()==nom){
+			cout<<"Client n°"<<i+1<<" : "<<m_clients.at(i).getInfos()<<"\n";
+		}
+	}
+}
+
+void Magasin::afficherClient(int id){
+	cout<<"\nVous avez recherché l'ID suivante : "<<id<<"\n";
+	cout<<"\n================= CLIENTS TROUVÉS =================\n";
+	for(int i=0; i<m_clients.size(); i++){
+		if(m_clients.at(i).getID()==id){
+			cout<<"Client n°"<<i+1<<" : "<<m_clients.at(i).getInfos()<<"\n";
+		}
+	}
+}
+
+void Magasin::ajouterAuPanier(Produit produit, Client client){
+	for(int i=0; i<m_clients.size(); i++){
+		if(client==m_clients.at(i)){
+			m_clients.at(i).ajouterAuPanier(produit);
+		}
+	}
+}
+
+void Magasin::retirerDuPanier(Produit produit, Client client){
+	for(int i=0; i<m_clients.size(); i++){
+		if(client==m_clients.at(i)){
+			m_clients.at(i).retirerDuPanier(produit);
+		}
+	}
+}
+
+void Magasin::modifierQuantitePanier(Produit produit, Client client, int quantite){
+	for(int i=0; i<m_clients.size(); i++){
+		if(client==m_clients.at(i)){
+			m_clients.at(i).modifierQuantiteProduit(produit, quantite);
+		}
+	}
+}

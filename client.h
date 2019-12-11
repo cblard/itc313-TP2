@@ -27,6 +27,7 @@ public:
 	void viderPanier();
 	void modifierQuantiteProduit(Produit produit, int quantite);
 	string getDescription();
+	string getInfos();
 private: 
 	string m_nom;
 	string m_prenom;
@@ -35,6 +36,6 @@ private:
 };
 
 std::ostream &operator<<(std::ostream &out, Client &client);
-
+bool operator==(Client client, Client client2);
 
 #endif

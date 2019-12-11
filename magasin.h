@@ -21,6 +21,13 @@ public:
 	void afficherProduits();
 	void afficherProduit(string nom);
 	void majStock(string nom, int quantite);
+	void ajouterClient(Client client);
+	void afficherClients();
+	void afficherClient(string nom);
+	void afficherClient(int id);
+	void ajouterAuPanier(Produit produit, Client client);
+	void retirerDuPanier(Produit produit, Client client);
+	void modifierQuantitePanier(Produit produit, Client client, int quantite);
 private:
 	vector <Produit> m_produits;
 	vector <Client> m_clients;

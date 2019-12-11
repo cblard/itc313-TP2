@@ -71,8 +71,21 @@ string Client::getDescription(){
 	return out;
 }
 
+string Client::getInfos(){
+	string out=m_nom+" "+m_prenom;
+	return out;
+}
+
 std::ostream &operator<<(std::ostream &out, Client &client)
 {
-	out<<client.getDescription();
+	out<<"Nom du client : "<<client.getDescription()<<"\n";
 	return out;
+}
+
+bool operator==(Client client, Client client2){
+	if(client.getNom()==client2.getNom() && client.getPrenom()==client2.getPrenom() && 
+		client.getID()==client2.getID()){
+		return true;
+	}
+	else return false; 
 }
