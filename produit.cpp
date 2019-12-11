@@ -21,7 +21,7 @@ float Produit::getPrix(){
 	return m_prix; 
 }
 
-void modifierQuantite(int quantite){
+void Produit::modifierQuantite(int quantite){
 	m_stock=quantite;
 }
 string Produit::getDescription(){
