@@ -28,7 +28,6 @@ private:
 	string m_prenom;
 	int m_id;
 	vector <Produit> m_panier;
-
 };
 
 #endif

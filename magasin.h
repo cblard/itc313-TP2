@@ -17,6 +17,7 @@ class Magasin{
 public:
 	Magasin();
 	Magasin(vector <Produit> produits, vector <Client> clients, vector <Commande> commandes);
+	//void ajouterProduit(Produit produit);
 private:
 	vector <Produit> m_produits;
 	vector <Client> m_clients;

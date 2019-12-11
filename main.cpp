@@ -10,6 +10,8 @@
 #include "magasin.h"
 
 int main(){
-	Magasin magasin; 
+	Magasin magasin(); 
+	Produit produit("PS4", "Console Sony", 10, 299.99);
+	cout<<produit;
 	return 0;
 }

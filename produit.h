@@ -9,6 +9,7 @@
 #ifndef PRODUIT_H
 #define PRODUIT_H
 
+#include <iostream>
 #include <string>
 using namespace std; 
 
@@ -17,11 +18,14 @@ public:
 	Produit(string titre, string description, int stock, float prix);
 	int getStock();
 	float getPrix();
+	string getDescription();
 private:
 	string m_titre;
 	string m_description;
 	int m_stock;
 	float m_prix;
 };
+
+std::ostream &operator<<(std::ostream &out, Produit &produit);
 
 #endif
