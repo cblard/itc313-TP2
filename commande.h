@@ -15,13 +15,16 @@ using namespace std;
 
 class Commande{
 public:
-	Commande(Client client, vector <Produit> produits, bool statut=false);
+	Commande(Client client, vector <Produit> produits);
 	string getClient();
 	void validerLivraison();
+	string getDescription();
 private:
 	Client m_client;
 	vector <Produit> m_produits;
 	bool m_statut;
 };
+
+ostream &operator<<(std::ostream &out, Commande &commande);
 
 #endif

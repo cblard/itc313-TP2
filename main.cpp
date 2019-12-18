@@ -40,5 +40,12 @@ int main(){
 
 	magasin.ajouterAuPanier(produit3, client);
 
+	// Ajout d'une commande
+	vector <Produit> listeProduits;
+	listeProduits.push_back(produit);
+	listeProduits.push_back(produit2);
+	Commande commande(client, listeProduits);
+	cout<<commande; 
+
 	return 0;
 }
