@@ -32,7 +32,7 @@ int main(){
 	client.ajouterAuPanier(produit2);
 	cout<<client;
 
-	// Ajout de cliens au magasin
+	// Ajout de clients au magasin
 	magasin.ajouterClient(client);
 	magasin.ajouterClient(client2);
 	magasin.afficherClients();
@@ -40,12 +40,31 @@ int main(){
 
 	magasin.ajouterAuPanier(produit3, client);
 
-	// Ajout d'une commande
+	// Création de tableaux de produits, clients et commandes pour création d'un magasin
 	vector <Produit> listeProduits;
+	vector <Client> listeClients;
+	vector <Commande> listeCommandes;
+
 	listeProduits.push_back(produit);
 	listeProduits.push_back(produit2);
+
+	listeClients.push_back(client);
+	listeClients.push_back(client2);
+
+	// Ajout d'une commande
 	Commande commande(client, listeProduits);
+	listeCommandes.push_back(commande);
+
 	cout<<commande; 
+
+	// Affichage des commandes d'un magasin
+
+	cout<<"\n______________AFFICHAGE COMMANDES________________\n";
+
+	Magasin magasin2(listeProduits, listeClients, listeCommandes);
+	magasin2.afficherCommandes();
+	magasin2.afficherCommandesClient(client);
+	cout<<"\n";
 
 	return 0;
 }

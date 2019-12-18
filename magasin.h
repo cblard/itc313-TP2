@@ -28,6 +28,10 @@ public:
 	void ajouterAuPanier(Produit produit, Client client);
 	void retirerDuPanier(Produit produit, Client client);
 	void modifierQuantitePanier(Produit produit, Client client, int quantite);
+	void validerCommande(Commande commande);
+	void changerStatut(Commande commande, bool statut);
+	void afficherCommandes();
+	void afficherCommandesClient(Client client); 
 private:
 	vector <Produit> m_produits;
 	vector <Client> m_clients;

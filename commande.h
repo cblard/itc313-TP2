@@ -19,6 +19,7 @@ public:
 	string getClient();
 	void validerLivraison();
 	string getDescription();
+	void changerStatut(bool statut);
 private:
 	Client m_client;
 	vector <Produit> m_produits;
@@ -26,5 +27,6 @@ private:
 };
 
 ostream &operator<<(std::ostream &out, Commande &commande);
+bool operator==(Commande commande1, Commande commande2);
 
 #endif

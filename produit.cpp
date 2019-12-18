@@ -9,10 +9,12 @@
 #include "produit.h"
 #include <iomanip>
 
-Produit::Produit(string titre, string description, int stock, float prix)
+// Constructeur de Produit 
+Produit::Produit(string titre, string description, int stock, float prix) 
 : m_titre(titre), m_description(description), m_prix(prix), m_stock(stock) {
 }
 
+// Getters
 int Produit::getStock(){
 	return m_stock;
 }
@@ -29,10 +31,12 @@ string Produit::getDescription(){
 	return m_description;
 }
 
+// Fonction pour modifier la quantité disponible d'un produit
 void Produit::modifierQuantite(int quantite){
 	m_stock=quantite;
 }
 
+// Fonction qui retourne la description complète d'un produit (nom, description, prix, stocks)
 string Produit::getDescriptionComplete(){
 	string out="";
 	out="_______________________________________________________________________________________\nProduit : "+
@@ -44,12 +48,14 @@ string Produit::getDescriptionComplete(){
 	return out;
 }
 
+// ENvoi d'un produit vers le flux de sortie avec l'opérateur <<
 std::ostream &operator<<(std::ostream &out, Produit &produit)
 {
 	out<<produit.getDescription();
 	return out;
 }
 
+// Comparaison de deux produits 
 bool operator==(Produit produit, Produit produit2){
 	if(produit.getTitre()==produit2.getTitre() && produit.getDescription()==produit2.getDescription() && 
 		produit.getStock()==produit2.getStock() && produit.getPrix()==produit2.getPrix()){
