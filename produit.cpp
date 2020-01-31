@@ -7,7 +7,6 @@
   */
 
 #include "produit.h"
-#include <iomanip>
 
 // Constructeur de Produit 
 Produit::Produit(string titre, string description, int stock, float prix) 
@@ -36,6 +35,11 @@ void Produit::modifierQuantite(int quantite){
 	m_stock=quantite;
 }
 
+string Produit::getDescriptionPanier(){
+	string out="";
+	out="\n"+m_titre+"  "+to_string(m_prix)+"€";
+	return out;
+}
 // Fonction qui retourne la description complète d'un produit (nom, description, prix, stocks)
 string Produit::getDescriptionComplete(){
 	string out="";
@@ -51,7 +55,7 @@ string Produit::getDescriptionComplete(){
 // ENvoi d'un produit vers le flux de sortie avec l'opérateur <<
 std::ostream &operator<<(std::ostream &out, Produit &produit)
 {
-	out<<produit.getDescription();
+	out<<produit.getDescriptionComplete();
 	return out;
 }
 

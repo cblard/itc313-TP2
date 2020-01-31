@@ -10,35 +10,49 @@
 #include "magasin.h"
 
 int main(){
-	// Création d'un magasin et de deux produits
-	Magasin magasin; 
+	// Création d'un magasin et de trois produits
+
+	// Question 1
+	Magasin EasyStore; 
 	Produit produit("PS4", "Console Sony", 10, 299.99);
 	Produit produit2("Switch", "Console Nintendo", 20, 259.99);
 	Produit produit3("XBox", "Console Microsoft", 50, 219.99);
+
+	// Question 2 : surcharge de l'opérateur <<
 	produit.modifierQuantite(20);
+	cout<<"\n\n================= QUESTION 2 =================\n\n";
+	cout<<produit<<"\n";
 
-	// Tests d'ajout de produits, et d'affichage pour les produits du magasin
-	magasin.ajouterProduit(produit);
-	magasin.ajouterProduit(produit2);
-	magasin.majStock("Switch", 30);
-	//magasin.afficherProduits();
+	// Question 3 : Ajout de produits, et affichage pour les produits du magasin
+	EasyStore.ajouterProduit(produit);
+	EasyStore.ajouterProduit(produit2);
+	EasyStore.majStock("Switch", 30);
 
-	// Ajout de clients
+	cout<<"\n\n\n\n================= QUESTION 3 =================\n\n";
+	EasyStore.afficherProduits();
+
+	// Question 4 : Ajout de clients
 	Client client("Hallyday", "Johnny");
 	Client client2("Cash", "Johnny");
+	Client client3("Bravo", "Johnny");
 	client.ajouterAuPanier(produit);
 	client.viderPanier();
 	client.ajouterAuPanier(produit);
 	client.ajouterAuPanier(produit2);
+
+	cout<<"\n\n\n\n================= QUESTION 4 =================\n\n";
 	cout<<client;
 
-	// Ajout de clients au magasin
-	magasin.ajouterClient(client);
-	magasin.ajouterClient(client2);
-	magasin.afficherClients();
-	magasin.afficherClient("Cash");
-
-	magasin.ajouterAuPanier(produit3, client);
+	// Question 5 : Ajout de clients au magasin
+	EasyStore.ajouterClient(client);
+	EasyStore.ajouterClient(client2);
+	EasyStore.ajouterClient(client3);
+	
+	cout<<"\n\n\n\n================= QUESTION 5 =================\n\n";
+	cout<<"======== AFFICHAGE DE TOUS LES CLIENTS =======\n\n";
+	EasyStore.afficherClients();
+	cout<<"\n\n============ AFFICHAGE D'UN CLIENT ===========\n\n";
+	EasyStore.afficherClient("Cash");
 
 	// Création de tableaux de produits, clients et commandes pour création d'un magasin
 	vector <Produit> listeProduits;
@@ -51,19 +65,22 @@ int main(){
 	listeClients.push_back(client);
 	listeClients.push_back(client2);
 
-	// Ajout d'une commande
+	// Question 6 : Ajout d'une commande
 	Commande commande(client, listeProduits);
 	listeCommandes.push_back(commande);
 
+	cout<<"\n\n\n\n================= QUESTION 6 =================\n\n";
 	cout<<commande; 
 
-	// Affichage des commandes d'un magasin
+	// Question 7 : Affichage des commandes d'un magasin
 
-	cout<<"\n______________AFFICHAGE COMMANDES________________\n";
+	cout<<"\n\n\n\n================= QUESTION 7 =================\n\n";
 
+	listeProduits.push_back(produit3);
+	Commande commande2(client2, listeProduits);
+	listeCommandes.push_back(commande2);
 	Magasin magasin2(listeProduits, listeClients, listeCommandes);
-	magasin2.afficherCommandes();
-	magasin2.afficherCommandesClient(client);
+	magasin2.afficherCommandesClient(client2);
 	cout<<"\n";
 
 	return 0;

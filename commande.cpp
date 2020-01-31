@@ -29,11 +29,11 @@ void Commande::validerLivraison(){
 string Commande::getDescription(){
   string out="Client : "+m_client.getInfos();
   out+="\nPanier : \n";
-  for (int i=0; i<m_produits.size(); i++){
-    out+=m_produits.at(i).getDescriptionComplete();
+  for (int i=0; i<(int)m_produits.size(); i++){
+    out+=m_produits.at(i).getDescriptionPanier();
   }
-  if (m_statut==false) out+="\nSTATUT : Commande en cours.";
-  else out+="STATUT : Commande envoyée.";
+  if (m_statut==false) out+="\n\nSTATUT : Commande en cours.";
+  else out+="\n\nSTATUT : Commande envoyée.";
   return out; 
 }
 

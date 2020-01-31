@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std; 
 
 class Produit{
@@ -20,13 +21,14 @@ public:
 	float getPrix();
 	string getTitre();
 	string getDescription();
+	string getDescriptionPanier();
 	string getDescriptionComplete();
 	void modifierQuantite(int quantite);
 private:
 	string m_titre;
 	string m_description;
-	int m_stock;
 	float m_prix;
+	int m_stock;
 };
 
 std::ostream &operator<<(std::ostream &out, Produit &produit);

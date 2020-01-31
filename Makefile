@@ -1,6 +1,6 @@
 # Makefile with dependencies management (Q4)
 
-CXX        = g++
+CXX        = g++-8
 CXXFLAGS   = -Wall -Wextra -std=c++11
 DEPFLAGS   = -MMD
 LDFLAGS    = 
@@ -8,7 +8,7 @@ LDFLAGS    =
 SRCS       = main.cpp magasin.cpp produit.cpp client.cpp commande.cpp
 OBJS       = $(SRCS:.cpp=.o)
 # Replace tp_main with the name you want to give to your executable file
-TARGET     = testMagasin	
+TARGET     = EasyStore	
 DEPS	   = $(OBJS:.o=.d)
 
 all: $(TARGET)

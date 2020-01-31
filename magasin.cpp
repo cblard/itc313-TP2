@@ -28,7 +28,7 @@ void Magasin::ajouterProduit(Produit produit){
 // Fonction d'affichage de tous les produits du magasin
 void Magasin::afficherProduits(){
 	cout<<"         LISTE DES PRODUITS                \n";
-	for(int i=0; i<m_produits.size(); i++){
+	for(int i=0; i<(int)m_produits.size(); i++){
 		cout<<m_produits.at(i).getDescriptionComplete();
 	}
 }
@@ -36,7 +36,7 @@ void Magasin::afficherProduits(){
 // Fonction d'affichage d'un produit en particulier
 void Magasin::afficherProduit(string nom){
 	cout<<"         PRODUIT DEMANDÉ             \n";
-	for(int i=0; i<m_produits.size(); i++){
+	for(int i=0; i<(int)m_produits.size(); i++){
 		if(nom==m_produits.at(i).getTitre()){
 			cout<<m_produits.at(i).getDescriptionComplete();
 		}
@@ -45,7 +45,7 @@ void Magasin::afficherProduit(string nom){
 
 // Fonction de mise à jour du stock d'un produit
 void Magasin::majStock(string nom, int quantite){
-	for(int i=0; i<m_produits.size(); i++){
+	for(int i=0; i<(int)m_produits.size(); i++){
 		if(nom==m_produits.at(i).getTitre()){
 			m_produits.at(i).modifierQuantite(quantite);
 		}
@@ -60,7 +60,7 @@ void Magasin::ajouterClient(Client client){
 // Fonction d'affichage de tous les clients du magasin 
 void Magasin::afficherClients(){
 	cout<<"\n================= LISTE DES CLIENTS ================\n";
-	for(int i=0; i<m_clients.size(); i++){
+	for(int i=0; i<(int)m_clients.size(); i++){
 		cout<<"Client n° "<<i+1<<" : "<<m_clients.at(i).getInfos()<<"\n";
 	}
 }
@@ -69,7 +69,7 @@ void Magasin::afficherClients(){
 void Magasin::afficherClient(string nom){
 	cout<<"\nVous avez recherché : "<<nom<<"\n";
 	cout<<"\n================= CLIENTS TROUVÉS =================\n";
-	for(int i=0; i<m_clients.size(); i++){
+	for(int i=0; i<(int)m_clients.size(); i++){
 		if(m_clients.at(i).getNom()==nom){
 			cout<<"Client n°"<<i+1<<" : "<<m_clients.at(i).getInfos()<<"\n";
 		}
@@ -80,7 +80,7 @@ void Magasin::afficherClient(string nom){
 void Magasin::afficherClient(int id){
 	cout<<"\nVous avez recherché l'ID suivante : "<<id<<"\n";
 	cout<<"\n================= CLIENTS TROUVÉS =================\n";
-	for(int i=0; i<m_clients.size(); i++){
+	for(int i=0; i<(int)m_clients.size(); i++){
 		if(m_clients.at(i).getID()==id){
 			cout<<"Client n°"<<i+1<<" : "<<m_clients.at(i).getInfos()<<"\n";
 		}
@@ -89,7 +89,7 @@ void Magasin::afficherClient(int id){
 
 // Fonction d'ajout d'un produit au panier d'un client 
 void Magasin::ajouterAuPanier(Produit produit, Client client){
-	for(int i=0; i<m_clients.size(); i++){
+	for(int i=0; i<(int)m_clients.size(); i++){
 		if(client==m_clients.at(i)){
 			m_clients.at(i).ajouterAuPanier(produit);
 			cout<<"\nClient et panifier modifiés : \n";
@@ -100,7 +100,7 @@ void Magasin::ajouterAuPanier(Produit produit, Client client){
 
 // Fonction de suppression d'un article du panier d'un client
 void Magasin::retirerDuPanier(Produit produit, Client client){
-	for(int i=0; i<m_clients.size(); i++){
+	for(int i=0; i<(int)m_clients.size(); i++){
 		if(client==m_clients.at(i)){
 			m_clients.at(i).retirerDuPanier(produit);
 		}
@@ -109,7 +109,7 @@ void Magasin::retirerDuPanier(Produit produit, Client client){
 
 // Fonction de modification de la quantité d'un produit du panier d'un client 
 void Magasin::modifierQuantitePanier(Produit produit, Client client, int quantite){
-	for(int i=0; i<m_clients.size(); i++){
+	for(int i=0; i<(int)m_clients.size(); i++){
 		if(client==m_clients.at(i)){
 			m_clients.at(i).modifierQuantiteProduit(produit, quantite);
 		}
@@ -118,7 +118,7 @@ void Magasin::modifierQuantitePanier(Produit produit, Client client, int quantit
 
 // Fonction de validation d'une livraison 
 void Magasin::validerCommande(Commande commande){
-	for(int i=0; i<m_commandes.size(); i++){
+	for(int i=0; i<(int)m_commandes.size(); i++){
 		if(m_commandes.at(i)==commande){
 			m_commandes.at(i).validerLivraison();
 		}
@@ -127,7 +127,7 @@ void Magasin::validerCommande(Commande commande){
 
 // Fonction du changement de statut de la livraison pour une commande
 void Magasin::changerStatut(Commande commande, bool statut){
-	for(int i=0; i<m_commandes.size(); i++){
+	for(int i=0; i<(int)m_commandes.size(); i++){
 		if(m_commandes.at(i)==commande){
 			m_commandes.at(i).changerStatut(statut);
 		}
@@ -136,14 +136,14 @@ void Magasin::changerStatut(Commande commande, bool statut){
 
 // Fonction d'affichage de toutes les commandes du magasin 
 void Magasin::afficherCommandes(){
-	for(int i=0; i<m_commandes.size(); i++){
+	for(int i=0; i<(int)m_commandes.size(); i++){
 		cout<<m_commandes.at(i);
 	}
 }
 
 // Fonction d'affichage de toutes les commandes d'un client 
 void Magasin::afficherCommandesClient(Client client){
-	for(int i=0; i<m_commandes.size(); i++){
+	for(int i=0; i<(int)m_commandes.size(); i++){
 		if(m_commandes.at(i).getClient()==client.getInfos()){
 			cout<<m_commandes.at(i);
 		}

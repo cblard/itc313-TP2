@@ -38,7 +38,7 @@ void Client::ajouterAuPanier(Produit produit){
 // Fonction de retrait d'un produit du panier du client 
 void Client::retirerDuPanier(Produit produit){
 	bool check=false; int i=0;
-	while(check==false && i<m_panier.size()){
+	while(check==false && i<(int)m_panier.size()){
 		if(m_panier.at(i)==produit){
 			m_panier.erase(m_panier.begin()+i);
 			check=true; 
@@ -54,7 +54,7 @@ void Client::viderPanier(){
 // Fonction pour modifier la quantité d'un produit du panier du client
 void Client::modifierQuantiteProduit(Produit produit, int quantite){
 	int compteur=0;
-	for(int i=0;i<m_panier.size();i++){
+	for(int i=0;i<(int)m_panier.size();i++){
 		if(produit==m_panier.at(i)){
 			compteur++;
 		}
@@ -70,7 +70,7 @@ void Client::modifierQuantiteProduit(Produit produit, int quantite){
 string Client::getDescription(){
 	string out="";
 	out=m_nom+" "+m_prenom+" \nPANIER : \n";
-	for(int i=0; i<m_panier.size();i++){
+	for(int i=0; i<(int)m_panier.size();i++){
 		out+="======================================Produit n°"+to_string(i+1)+"======================================\n";
 		out+=m_panier.at(i).getDescriptionComplete();
 	}
